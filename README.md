@@ -2,7 +2,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/130Widgets.SpectreHelpers.svg)](https://www.nuget.org/packages/130Widgets.SpectreHelpers/)
 
-[![License](https://img.shields.io/github/license/bojordan/SpectreHelpers.svg)](https://github.com/bojordan/SpectreHelpers/blob/main/LICENSE.txt)
+[![License](https://img.shields.io/github/license/bojordan/SpectreHelpers.svg)](https://github.com/bojordan/SpectreHelpers/blob/main/LICENSE)
 
 **SpectreHelpers** is a collection of helper extensions for [Spectre.Console](https://github.com/spectreconsole/spectre.console) that simplify common console application patterns, especially progress tracking with multiple concurrent tasks.
 
