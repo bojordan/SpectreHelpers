@@ -2,7 +2,7 @@
 
 namespace Spectre.Console;
 
-public static class ProgressHelpers
+public static class ProgressExtensions
 {
     private static readonly object _lock = new();
 
