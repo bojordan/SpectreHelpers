@@ -7,11 +7,12 @@
     <AssemblyName>130Widgets.SpectreHelpers</AssemblyName>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageTags>Spectre;Spectre.Console;CLI</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <RepositoryUrl>https://github.com/bojordan/spectrehelpers</RepositoryUrl>
-    <ProjectUrl>https://github.com/bojordan/spectrehelpers</ProjectUrl>
+    <PackageProjectUrl>https://bojordan.com</PackageProjectUrl>
     <PackageDescription>Helpers for use with Spectre.Console</PackageDescription>
     <Authors>Bo Jordan</Authors>
 
@@ -37,6 +38,7 @@
     <!-- Add a LICENSE.txt next to the csproj -->
     <None Include="../LICENSE.txt" Pack="true" PackagePath=""/>
     <None Include="README.md" Pack="true" PackagePath=""/>
+    <None Include="icon.png" Pack="true" PackagePath=""/>
   </ItemGroup>
   
 </Project>
