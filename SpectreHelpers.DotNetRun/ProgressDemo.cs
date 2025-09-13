@@ -6,7 +6,7 @@
 // Spectre.Console is included automatically as a transitive dependency.
 // See https://spectreconsole.net for more information.
 
-#:package 130Widgets.SpectreHelpers@1.0.0
+#:package 130Widgets.SpectreHelpers@[1.0.0, 2.0.0)
 
 using Spectre.Console;
 
