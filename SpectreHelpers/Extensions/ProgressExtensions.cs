@@ -8,6 +8,9 @@ public static class ProgressExtensions
 
     private static readonly Dictionary<Progress, List<(string taskName, double maxValue, Func<ProgressTask, Task> handler)>> _handlers = new();
 
+    /// <summary>
+    /// Adds a new task handler to the specified <see cref="Progress"/> instance. Use with <see cref="StartAsync(Progress)"/>.
+    /// </summary>
     public static Progress AddTask(this Progress progress, string taskName, double maxValue, Func<ProgressTask, Task> handler)
     {
         lock (_lock)
@@ -25,16 +28,25 @@ public static class ProgressExtensions
         return progress;
     }
 
+    /// <summary>
+    /// Adds a new task handler to the specified <see cref="Progress"/> instance. Use with <see cref="StartAsync(Progress)"/>.
+    /// </summary>
     public static Progress AddTask(this Progress progress, string taskName, Func<ProgressTask, Task> handler)
     {
         return progress.AddTask(taskName, 100, handler);
     }
 
+    /// <summary>
+    /// Adds a new task handler to the specified <see cref="Progress"/> instance. Use with <see cref="StartAsync(Progress)"/>.
+    /// </summary>
     public static Progress AddTask(this Progress progress, Func<ProgressTask, Task> handler)
     {
         return progress.AddTask(handler.GetMethodInfo().Name, 100, handler);
     }
 
+    /// <summary>
+    /// Starts the specified <see cref="Progress"/> instance and all its tasks. Use with <see cref="AddTask(Progress, string, double, Func{ProgressTask, Task})"/>.
+    /// </summary>
     public static async Task StartAsync(this Progress progress)
     {
 
