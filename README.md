@@ -10,13 +10,13 @@
 
 Install via NuGet:
 
-```sh
+```
 dotnet add package 130Widgets.SpectreHelpers
 ```
 
 For C# scripts (`dotnet run app.cs`):
 
-```csharp
+```
 #:package 130Widgets.SpectreHelpers@[1.0.0, 2.0.0)
 ```
 
