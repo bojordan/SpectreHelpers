@@ -9,8 +9,6 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageTags>Spectre;Spectre.Console;CLI</PackageTags>
-    <!--<IncludeSymbols>true</IncludeSymbols>-->
-    <!--<SymbolPackageFormat>snupkg</SymbolPackageFormat>-->
     <RepositoryUrl>https://github.com/bojordan/spectrehelpers</RepositoryUrl>
     <PackageProjectUrl>https://bojordan.com</PackageProjectUrl>
     <PackageDescription>Helpers for use with Spectre.Console</PackageDescription>
