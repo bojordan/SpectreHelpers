@@ -1,4 +1,10 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".github/workflows/publish.yml" />
+    <File Path=".gitignore" />
+    <File Path="LICENSE.txt" />
+  </Folder>
   <Project Path="SpectreHelpers.ProgressDemo/SpectreHelpers.ProgressDemo.csproj" />
   <Project Path="SpectreHelpers.StatusDemo/SpectreHelpers.StatusDemo.csproj" />
   <Project Path="SpectreHelpers/SpectreHelpers.csproj" />
