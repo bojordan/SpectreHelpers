@@ -50,7 +50,7 @@ await AnsiConsole.Progress()
 
 ## Examples
 
-- [C# script example (`dotnet run app.cs`)](https://github.com/bojordan/SpectreHelpers/tree/main/demos/SpectreHelpers.DotNetRun)
+- [C# script example](https://github.com/bojordan/SpectreHelpers/tree/main/demos/SpectreHelpers.DotNetRun/ProgressDemo.cs)
 - [Console app example](https://github.com/bojordan/SpectreHelpers/tree/main/demos/SpectreHelpers.ProgressDemo)
 
 ---
