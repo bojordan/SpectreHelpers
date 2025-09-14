@@ -6,7 +6,9 @@
     <File Path="README.md" />
     <File Path="LICENSE" />
   </Folder>
-  <Project Path="SpectreHelpers.ProgressDemo/SpectreHelpers.ProgressDemo.csproj" />
-  <Project Path="SpectreHelpers.StatusDemo/SpectreHelpers.StatusDemo.csproj" />
+  <Folder Name="/demos/">
+    <Project Path="demos/SpectreHelpers.ProgressDemo/SpectreHelpers.ProgressDemo.csproj" />
+    <Project Path="demos/SpectreHelpers.StatusDemo/SpectreHelpers.StatusDemo.csproj" />
+  </Folder>
   <Project Path="SpectreHelpers/SpectreHelpers.csproj" />
 </Solution>

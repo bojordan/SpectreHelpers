@@ -4,7 +4,7 @@ namespace Spectre.Console;
 
 public static class ProgressExtensions
 {
-    private static readonly object _lock = new();
+    private static readonly Lock _lock = new();
 
     private static readonly Dictionary<Progress, List<(string taskName, double maxValue, Func<ProgressTask, Task> handler)>> _handlers = new();
 
@@ -49,27 +49,35 @@ public static class ProgressExtensions
     /// </summary>
     public static async Task StartAsync(this Progress progress)
     {
-
         await progress.StartAsync(async ctx =>
         {
-            if (_handlers.ContainsKey(progress))
+            if (_handlers.TryGetValue(progress, out List<(string taskName, double maxValue, Func<ProgressTask, Task> handler)>? handlers))
             {
-                var handlers = _handlers[progress];
-                await Task.WhenAll(handlers.Select(async taskNameAndHandler =>
+                try
                 {
-                    var task = ctx.AddTask(taskNameAndHandler.taskName, new ProgressTaskSettings
+                    await Task.WhenAll(handlers.Select(async taskNameAndHandler =>
                     {
-                        AutoStart = true,
-                        MaxValue = taskNameAndHandler.maxValue,
-                    });
+                        var task = ctx.AddTask(taskNameAndHandler.taskName, new ProgressTaskSettings
+                        {
+                            AutoStart = true,
+                            MaxValue = taskNameAndHandler.maxValue,
+                        });
 
-                    await taskNameAndHandler.handler(task);
-                    if (!task.IsFinished)
+                        await taskNameAndHandler.handler(task);
+                        if (!task.IsFinished)
+                        {
+                            task.Value(task.MaxValue);
+                            task.StopTask();
+                        }
+                    }));
+                }
+                finally
+                {
+                    lock (_lock)
                     {
-                        task.Value(task.MaxValue);
-                        task.StopTask();
+                        _handlers.Remove(progress);
                     }
-                }));
+                }
             }
         });
     }
